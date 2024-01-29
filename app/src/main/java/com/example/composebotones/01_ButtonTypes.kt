@@ -32,6 +32,7 @@ import kotlin.random.Random
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.ShoppingCart
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
@@ -43,6 +44,7 @@ fun BotonesNuevos() {
         }
         ContainedButtonExample()
         IconButtonExample()
+        ToggleButtonExample()
     }
 
 }
@@ -220,24 +222,24 @@ fun ContainedButtonExample() {
     }
 }
 
-//@Preview
-//@Composable
-//fun ToggleButtonExample() {
-//    var checked by remember { mutableStateOf(false) } //1
-//
-//    IconToggleButton(checked = checked, onCheckedChange = { checked = it }) { //2
-//        Icon(
-//            painter = painterResource( //3
-//                if (checked) R.drawable.ic_bookmark
-//                else R.drawable.ic_bookmark_border
-//            ),
-//            contentDescription = //4
-//            if (checked) "Añadir a marcadores"
-//            else "Quitar de marcadores",
-//            tint = Color(0xFF26C6DA) //5
-//        )
-//    }
-//}
+@Preview
+@Composable
+fun ToggleButtonExample() {
+    var checked by remember { mutableStateOf(false) } //1
+
+    IconToggleButton(checked = checked, onCheckedChange = { checked = it }) { //2
+        Icon(
+            painter = painterResource( //3
+                if (checked) R.drawable.ic_bookmark
+                else R.drawable.ic_bookmark_border
+            ),
+            contentDescription = //4
+            if (checked) "Añadir a marcadores"
+            else "Quitar de marcadores",
+            tint = Color(0xFF26C6DA) //5
+        )
+    }
+}
 
 @Preview
 @Composable
@@ -256,6 +258,7 @@ fun IconButtonExample() {
 //        )
         Icon(
             Icons.Default.Home,
+            //Icons.Default.ShoppingCart,
             contentDescription = "Cambiar color2",
             tint = color
         )
